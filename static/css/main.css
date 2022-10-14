@@ -1,0 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Sora", sans-serif;
+}
+
+header {
+  background-color: #CB5547;
+  height: 70px;
+  color: #FFFBFE;
+  display: block;
+  position: relative;
+}
+header .container-fluid {
+  position: relative;
+}
+header .logo {
+  padding: 5px 0 0 20px;
+}
+header .logo img {
+  width: 60px;
+}
+header .up_or_down_week {
+  padding-top: 17px;
+  float: left;
+  font-weight: 300;
+  position: relative;
+  display: flex;
+}
+header .up_or_down_week .up, header .up_or_down_week .down {
+  font-weight: 800;
+}
+header .up_or_down_week .button {
+  margin-left: 10px;
+}
+header .up_or_down_week img {
+  width: 25px;
+}
+header .up_or_down_week .item {
+  margin-top: 8px;
+}
+header .current_date {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+header .login .item {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}
+
+.upper_week .exchange, .down_week .exchange {
+  display: block;
+  float: right;
+  width: 25px;
+}
+.upper_week .hyperlink, .down_week .hyperlink {
+  text-decoration: none;
+  color: #3f9ef5;
+  font-weight: 800;
+}
+.upper_week .hyperlink1, .down_week .hyperlink1 {
+  margin-right: 10px;
+}
+.upper_week .time, .down_week .time {
+  font-weight: normal;
+}
+.upper_week .number_lesson_span, .down_week .number_lesson_span {
+  font-weight: 800;
+  color: #ff1903;
+  font-size: 20px;
+  line-height: 10px;
+}
+.upper_week .last_info, .down_week .last_info {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+.upper_week .last_info .link, .down_week .last_info .link {
+  margin-right: 10px;
+}
+.upper_week .last_info .last_changes, .down_week .last_info .last_changes {
+  font-size: 12px;
+  color: #989090;
+}
+.upper_week .last_info .last_changes .changed_last_changes, .down_week .last_info .last_changes .changed_last_changes {
+  font-size: 10px;
+}
+
+.current_bold_week {
+  font-weight: 800;
+  color: #CB5547;
+}
+
+.current_bold_day {
+  font-weight: 800;
+  color: #CB5547;
+}
+
+.login_label, .password_label {
+  color: black;
+  font-weight: bold;
+}
+
+.form-error {
+  color: red;
+}
+
+.space {
+  background-color: #CB5547;
+  height: 80px;
+  width: 100%;
+}
+
+.table {
+  padding: 0;
+  margin: 0;
+}
+
+.update .changing_date {
+  display: flex;
+  justify-content: center;
+  color: #FFFBFE;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 25px;
+}
+.update .changing_date .day {
+  margin-right: 10px;
+}
+.update .changing_date .lesson {
+  margin-right: 10px;
+}
+.update .changing_date .week {
+  margin-right: 10px;
+  font-weight: bolder;
+  color: #CB5547;
+}
+.update .last_changes_update {
+  margin-right: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 17px;
+  font-weight: bolder;
+}
+.update .last_changes_update .changed_last_changes {
+  margin-right: 4px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,85 @@
+{% load static %}
+
+<section class="upper_week">
+	<table class="table table-dark table-striped">
+		<thead>
+		<tr>
+			<th scope="col" class="current_bold_week">ВЕРХНІЙ</th>
+			<th scope="col" {% if current_day == 1 %}class="current_bold_day"{% endif %}>Понеділок</th>
+			<th scope="col" {% if current_day == 2 %}class="current_bold_day"{% endif %}>Вівторок</th>
+			<th scope="col" {% if current_day == 3 %}class="current_bold_day"{% endif %}>Середа</th>
+			<th scope="col" {% if current_day == 4 %}class="current_bold_day"{% endif %}>Четвер</th>
+			<th scope="col" {% if current_day == 5 %}class="current_bold_day"{% endif %}>П'ятниця</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th scope="row"><span class="number_lesson_span">1 </span><span class="time">9:00-10:20</span></th>
+			{% for el in first_lesson %}
+				{% include 'main_todo/_todo_mixin.html' %}
+			{% endfor %}
+		</tr>
+		<tr>
+			<th scope="row"><span class="number_lesson_span">2 </span><span class="time">10:40-12:00</span></th>
+			{% for el in second_lesson %}
+				{% include 'main_todo/_todo_mixin.html' %}
+			{% endfor %}
+		</tr>
+		<tr>
+			<th scope="row"><span class="number_lesson_span">3 </span><span class="time">12:20-13:40</span></th>
+			{% for el in third_lesson %}
+				{% include 'main_todo/_todo_mixin.html' %}
+			{% endfor %}
+		</tr>
+		<tr>
+			<th scope="row"><span class="number_lesson_span">4 </span><span class="time">14:05-15:25</span></th>
+			{% for el in fourth_lesson %}
+				{% include 'main_todo/_todo_mixin.html' %}
+			{% endfor %}
+		</tr>
+		</tbody>
+	</table>
+	<div class="space"></div>
+</section>
+
+
+<section class="down_week">
+	<table class="table table-dark table-striped">
+		<thead>
+		<tr>
+			<th scope="col">НИЖНІЙ</th>
+			<th scope="col">Понеділок</th>
+			<th scope="col">Вівторок</th>
+			<th scope="col">Середа</th>
+			<th scope="col">Четвер</th>
+			<th scope="col">П'ятниця</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th scope="row"><span class="number_lesson_span">1 </span><span class="time">9:00-10:20</span></th>
+			{% for el in first_lesson2 %}
+				{% include 'main_todo/_todo_mixin.html' %}
+			{% endfor %}
+		</tr>
+		<tr>
+			<th scope="row"><span class="number_lesson_span">2 </span><span class="time">10:40-12:00</span></th>
+			{% for el in second_lesson2 %}
+				{% include 'main_todo/_todo_mixin.html' %}
+			{% endfor %}
+		</tr>
+		<tr>
+			<th scope="row"><span class="number_lesson_span">3 </span><span class="time">12:20-13:40</span></th>
+			{% for el in third_lesson2 %}
+				{% include 'main_todo/_todo_mixin.html' %}
+			{% endfor %}
+		</tr>
+		<tr>
+			<th scope="row"><span class="number_lesson_span">4 </span><span class="time">14:05-15:25</span></th>
+			{% for el in fourth_lesson2 %}
+				{% include 'main_todo/_todo_mixin.html' %}
+			{% endfor %}
+		</tr>
+		</tbody>
+	</table>
+</section>

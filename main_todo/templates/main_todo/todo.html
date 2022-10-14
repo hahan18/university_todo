@@ -1,0 +1,22 @@
+{% extends 'main_todo/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+
+{% block content %}
+	{% if current_week == '1' %}
+		{% include 'main_todo/_todo_upper.html' %}
+	{% endif %}
+
+
+
+	{% if current_week == '2' %}
+		{% include 'main_todo/_todo_down.html' %}
+	{% endif %}
+
+{% endblock content %}
+
+
+
+

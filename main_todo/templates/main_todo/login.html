@@ -1,0 +1,30 @@
+{% extends 'main_todo/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+	<section class="vh-100" style="background-color: #508bfc;">
+		<div class="container py-5 h-100">
+			<div class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+					<div class="card shadow-2-strong" style="border-radius: 1rem;">
+						<div class="card-body p-5 text-center">
+							<form method="post">
+								{% csrf_token %}
+								<div class="form-error">{{ form.non_field_errors }}</div>
+								{% for f in form %}
+									<div class="form-outline mb-4">
+										<label class="form-label login_label" for="{{ f.id_for_label }}">{{ f.label }}</label>
+										{{ f }}
+									</div>
+									<div class="form-error">{{ f.errors }}</div>
+								{% endfor %}
+								<button class="btn btn-primary btn-lg btn-block" type="submit">Увійти</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
