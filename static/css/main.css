@@ -80,11 +80,11 @@ header .login .item {
   line-height: 10px;
 }
 .upper_week .last_info, .down_week .last_info {
-  display: flex;
   position: relative;
-  justify-content: space-between;
 }
 .upper_week .last_info .link, .down_week .last_info .link {
+  display: flex;
+  justify-content: flex-end;
   margin-right: 10px;
 }
 .upper_week .last_info .last_changes, .down_week .last_info .last_changes {
