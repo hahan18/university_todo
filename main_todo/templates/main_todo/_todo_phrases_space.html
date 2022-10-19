@@ -1,0 +1,19 @@
+{% load static %}
+
+
+<section class="chinese_space space">
+	{% if phrase %}
+		<div class="chinese_phrase">
+			{{ phrase|truncatewords:30 }}
+		</div>
+	{% endif %}
+	<div class="change_phrase">
+		{% if request.user.is_authenticated %}
+			<a href="{% url 'chinese_phrase' %}">
+				<button class="btn" type="submit">
+					<img class="change_phrase_button" src="{% static 'images/refresh.png' %}" alt="exchange">
+				</button>
+			</a>
+		{% endif %}
+	</div>
+</section>

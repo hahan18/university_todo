@@ -2,19 +2,29 @@
 
 
 <td>
-	<div class="first_name">{% if el.first_name %}{{ el.first_name }}{% else %}<br>{% endif %}</div>
-	<div class="last_name">{% if el.last_name %}{{ el.last_name }}{% else %}<br>{% endif %}</div>
-	<div class="subject">{% if el.subject %}{{ el.subject }}{% else %}<br>{% endif %}</div>
+	<div class="first_name">{% if el.first_name %}{{ el.first_name }}{% endif %}</div>
+	<div class="last_name">{% if el.last_name %}{{ el.last_name }}{% endif %}</div>
+	<div class="subject">{% if el.subject %}{{ el.subject }}{% endif %}</div>
 	{% if el.link %}
-		<a class="hyperlink hyperlink1" target="_blank" href="{{ el.link }}">Посилання1</a>
+		<a class="hyperlink hyperlink1" target="_blank" href="{{ el.link }}">Посилання</a>
 	{% endif %}
 	{% if el.link2 %}
 		<a class="hyperlink" target="_blank" href="{{ el.link2 }}">Посилання2</a>
 	{% endif %}
 
+	{% if not el.first_name %}
+		<br>
+	{% endif %}
+	{% if not el.last_name %}
+		<br>
+	{% endif %}
+	{% if not el.subject %}
+		<br>
+	{% endif %}
+
 	<div class="last_info">
-{#		<div class="last_changes"><span class="changed_last_changes">ЗМІНЕНО: </span>{{ el.last_changes|date:'d.m-H:i' }}#}
-{#		</div>#}
+		{#		<div class="last_changes"><span class="changed_last_changes">ЗМІНЕНО: </span>{{ el.last_changes|date:'d.m-H:i' }}#}
+		{#		</div>#}
 		{% if request.user.is_authenticated %}
 			<div class="link">
 				<a href="{% url 'update' el.day_number el.number_of_lesson %}"><img class="exchange"

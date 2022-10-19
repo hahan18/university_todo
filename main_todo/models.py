@@ -71,5 +71,8 @@ class MainData(models.Model):
         verbose_name='Верхній чи нижній тиждень',
         default=UpOrDownWeek.UP
     )
+    changed = models.DateTimeField(auto_now_add=True)
 
 
+class ChinesePhrase(models.Model):
+    phrase = models.CharField(max_length=255, null=True, blank=True, verbose_name='Фразочка')

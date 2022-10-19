@@ -24,19 +24,18 @@
 			<div class="logo col-1">
 				<div class="item"><a href="{% url 'todo' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a></div>
 			</div>
-			<div class="up_or_down_week col-2">
+			<div class="up_or_down_week col-4">
 				{% if current_week == '1' %}
-					<div class="item up"><span>ВЕРХНІЙ</span></div>
+					<div class="item up"><span>ВЕРХНІЙ</span> / НИЖНІЙ</div>
 				{% elif current_week == '2' %}
-					<div class="item down"><span>НИЖНІЙ</span></div>
+					<div class="item down">ВЕРХНІЙ / <span>НИЖНІЙ</span></div>
 				{% endif %}
 				{% if user.is_authenticated %}
-					<form action="{% url 'updown' %}" method="post">
-						{% csrf_token %}
+					<a href="{% url 'updown' %}">
 						<button class="button btn" type="submit">
 							<img src="{% static 'images/refresh.png' %}" alt="exchange">
 						</button>
-					</form>
+					</a>
 				{% endif %}
 			</div>
 			<div class="current_date col-4">

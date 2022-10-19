@@ -27,6 +27,10 @@ header
         position: relative
         display: flex
 
+        span
+            color: #67ff00
+            text-decoration: underline 6px
+
         .up, .down
             font-weight: 800
 
@@ -41,12 +45,6 @@ header
             margin-top: 8px
 
     .current_date
-        position: absolute
-        left: 0
-        right: 0
-        margin-left: auto
-        margin-right: auto
-        width: 200px
         padding-top: 22px
         font-weight: 500
         font-size: 20px
@@ -69,6 +67,7 @@ header
         text-decoration: none
         color: #3f9ef5
         font-weight: 800
+
     .hyperlink1
         margin-right: 10px
 
@@ -78,28 +77,34 @@ header
     .number_lesson_span
         font-weight: 800
         color: #ff1903
-        font-size: 20px
-        line-height: 10px
+        font-size: 15px
+
     .last_info
         position: relative
+        display: inline-block
+        float: right
+
         .link
             display: flex
             justify-content: flex-end
             margin-right: 10px
+
         .last_changes
             font-size: 12px
             color: #989090
+
             .changed_last_changes
                 font-size: 10px
 
 
 .current_bold_week
     font-weight: 800
-    color: #CB5547
+    color: #FFFBFE
 
 .current_bold_day
     font-weight: 800
-    color: #CB5547
+    color: #67ff00
+    text-decoration: underline solid 6px
 
 
 .login_label, .password_label
@@ -126,10 +131,13 @@ header
         margin-bottom: 20px
         font-weight: bold
         font-size: 25px
+
         .day
             margin-right: 10px
+
         .lesson
             margin-right: 10px
+
         .week
             margin-right: 10px
             font-weight: bolder
@@ -142,6 +150,25 @@ header
         align-items: center
         font-size: 17px
         font-weight: bolder
+
         .changed_last_changes
             margin-right: 4px
             font-weight: bold
+
+
+.chinese_space
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #212529
+    font-size: 24px
+    font-weight: bolder
+    position: relative
+
+    .change_phrase
+        display: inline-block
+        img
+            width: 25px
+        .btn
+            &:hover
+                border-color: white

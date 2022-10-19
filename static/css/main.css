@@ -27,6 +27,10 @@ header .up_or_down_week {
   position: relative;
   display: flex;
 }
+header .up_or_down_week span {
+  color: #67ff00;
+  text-decoration: underline 6px;
+}
 header .up_or_down_week .up, header .up_or_down_week .down {
   font-weight: 800;
 }
@@ -40,12 +44,6 @@ header .up_or_down_week .item {
   margin-top: 8px;
 }
 header .current_date {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 200px;
   padding-top: 22px;
   font-weight: 500;
   font-size: 20px;
@@ -76,11 +74,12 @@ header .login .item {
 .upper_week .number_lesson_span, .down_week .number_lesson_span {
   font-weight: 800;
   color: #ff1903;
-  font-size: 20px;
-  line-height: 10px;
+  font-size: 15px;
 }
 .upper_week .last_info, .down_week .last_info {
   position: relative;
+  display: inline-block;
+  float: right;
 }
 .upper_week .last_info .link, .down_week .last_info .link {
   display: flex;
@@ -97,12 +96,13 @@ header .login .item {
 
 .current_bold_week {
   font-weight: 800;
-  color: #CB5547;
+  color: #FFFBFE;
 }
 
 .current_bold_day {
   font-weight: 800;
-  color: #CB5547;
+  color: #67ff00;
+  text-decoration: underline solid 6px;
 }
 
 .login_label, .password_label {
@@ -155,6 +155,25 @@ header .login .item {
 .update .last_changes_update .changed_last_changes {
   margin-right: 4px;
   font-weight: bold;
+}
+
+.chinese_space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #212529;
+  font-size: 24px;
+  font-weight: bolder;
+  position: relative;
+}
+.chinese_space .change_phrase {
+  display: inline-block;
+}
+.chinese_space .change_phrase img {
+  width: 25px;
+}
+.chinese_space .change_phrase .btn:hover {
+  border-color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -7,8 +7,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
 from django.views.generic import ListView
-from .models import Schedule, MainData
-from .forms import ScheduleUpdateForm, LoginUserForm
+from .models import Schedule, MainData, ChinesePhrase
+from .forms import ScheduleUpdateForm, LoginUserForm, ChinesePhraseForm
 
 
 class Todo(ListView):
@@ -33,10 +33,28 @@ class Todo(ListView):
             'current_week': MainData.objects.get(pk=1).up_or_down_week,
             'current_day': timezone.now().isoweekday(),
             'title': 'Розклад',
+            'phrase': ChinesePhrase.objects.first().phrase,
         }
         context.update(context_dict)
-
         return context
+
+    @staticmethod
+    def change_current_week():
+        obj = MainData.objects.get(pk=1)
+        current_week = timezone.now().strftime('%W')
+        changed_week = obj.changed.strftime('%W')
+
+        changed_on_this_week = current_week == changed_week
+
+        if not changed_on_this_week:
+            if obj.up_or_down_week == '1':
+                obj.up_or_down_week = '2'
+            else:
+                obj.up_or_down_week = '1'
+            obj.save()
+
+    if timezone.now().weekday() == 0:
+        change_current_week()
 
 
 @login_required(login_url='login/')
@@ -77,6 +95,28 @@ def up_down(request):
         obj.up_or_down_week = '1'
     obj.save()
     return redirect(request.META['HTTP_REFERER'])
+
+
+@login_required(login_url='login/')
+def chinese_phrase(request):
+    ch_phrase = get_object_or_404(ChinesePhrase, pk=2)
+
+    form = ChinesePhraseForm(instance=ch_phrase)
+
+    if request.method == 'POST':
+        form = ChinesePhraseForm(request.POST, instance=ch_phrase)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+
+    context = {
+        'date_now': timezone.now().strftime('%A %d.%m'),
+        'current_week': MainData.objects.get(pk=1).up_or_down_week,
+        'title': 'Китайська мудрість',
+        'form': form,
+    }
+
+    return render(request, 'main_todo/chinese_phrase.html', context)
 
 
 class LoginUser(LoginView):
