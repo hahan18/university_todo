@@ -54,10 +54,10 @@ class Schedule(models.Model):
     last_changes = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.subject + ' ' + self.day_number + self.number_of_lesson
+        return str(self.pk)
 
     class Meta:
-        ordering = ['day_number', 'number_of_lesson']
+        ordering = ['pk']
 
 
 class MainData(models.Model):
